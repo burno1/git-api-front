@@ -1,0 +1,26 @@
+
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import {map, startWith, skipLast} from 'rxjs/operators';
+
+@Injectable({
+  providedIn: "root"
+})
+export class DataService {
+  constructor(private http: HttpClient) {}
+  gitHubApi ='https://api.github.com/legacy/repos/search/';
+  getRepos(linguagem: string): any {
+    return this.http.get(this.gitHubApi + linguagem+"?language="+linguagem+"&sort=stars&order=desc");
+  }
+
+  getRepo(id: number): any{
+    return this.http.get("http://localhost:8080/convidados/" + id);
+  }
+
+  saveRepos(): any{
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    // return this.http.post("http://localhost:8080/convidados/",  );
+  }
+
+}
