@@ -9,10 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatFormFieldModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
+import { RepoComponent } from './repo/repo.component';
+import { RouterModule } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RepoComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    RouterModule
     
   ],
   providers: [],
