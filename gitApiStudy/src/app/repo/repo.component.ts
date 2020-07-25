@@ -27,6 +27,9 @@ export class RepoComponent implements OnInit {
 
      this.data.getRepo(params.get("user"),params.get("repo")).subscribe(data=> {
         this.repository= data;
+        this.repository.repoName = params.get("repo");
+        this.repository.language = params.get("linguagem");
+        this.repository.repoUser= params.get("user");
         console.log(this.repository);
      })
   });

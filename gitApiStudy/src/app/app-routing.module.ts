@@ -11,7 +11,7 @@ const routes: Routes = [
   component: LandingPageComponent
   },
   {
-    path: "repo/:user/:repo",
+    path: ":linguagem/:user/:repo",
     component: RepoComponent
   }
 ];

@@ -1,3 +1,4 @@
+import { Repo } from './../model/Repo';
 import { DataService } from './../data.service';
 
 import {Component, OnInit} from '@angular/core';
@@ -26,6 +27,9 @@ export class LandingPageComponent implements OnInit {
   ];
   selected: string;
   listaRetorno;
+  loading;
+  repos: Array<Repo> = [];
+
 
   constructor(private data: DataService) {}
 
@@ -34,15 +38,34 @@ export class LandingPageComponent implements OnInit {
 
   
   pesquisar() { 
-    console.log(this.selected);
-    
+    this.listaRetorno = null;
+    this.loading = true;
     this.data.getRepos(this.selected).subscribe(data => {
       this.listaRetorno = null;
       this.listaRetorno = data["repositories"].slice(0,5);
       console.log(this.listaRetorno);
+      this.loading =false;
+    });
+  }
+
+  saveRepos(){
+    this.repos = [];
+    this.listaRetorno.forEach(element => {
+      var repo = new Repo();
+      repo.repoName = element.name;
+      repo.language = this.selected;
+      repo.repoUser = element.username;
+      repo.description = element.description;
+      repo.stargazers_count = element.followers;
+      
+      console.log(repo);
+      
+      this.repos.push(repo);
     });
 
-
+    this.data.saveRepos(this.repos).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

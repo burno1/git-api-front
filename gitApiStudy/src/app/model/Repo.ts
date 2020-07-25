@@ -9,9 +9,11 @@
   */
 
 export class Repo{
-    name: string;
+    repoName: string;
     avatar_url: string;
     url: string;
+    repoUser: string;
     description: string;
     stargazers_count:string;
+    language:string;
 }
