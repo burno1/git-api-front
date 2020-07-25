@@ -13,8 +13,9 @@ export class DataService {
     return this.http.get(this.gitHubApi + linguagem+"?language="+linguagem+"&sort=stars&order=desc");
   }
 
-  getRepo(id: number): any{
-    return this.http.get("http://localhost:8080/convidados/" + id);
+  getRepo(user, repo): any{
+    console.log(user,repo);
+    return this.http.get("https://api.github.com/repos/" + user+'/'+repo);
   }
 
   saveRepos(): any{

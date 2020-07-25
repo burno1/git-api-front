@@ -1,6 +1,28 @@
-<div class="fluid-container">
+<div class="container-fluid" style="padding:0px">
     <span><a  routerLink="" class="ion-android-arrow-back material-icons" style="color: white;">arrow_back_ios</a></span>
     <div class="jumbotron jumbotron-fluid">
         <h4  style="color: aliceblue;">THAT'S DEFINETLY A FAMOUS REP</h4>
+    </div>
+    <div class="container">
+        <div class="card"> 
+                <div class="card-header">
+                    <div class="col-sm-12">
+                        <p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                          </svg> {{repository.stargazers_count}}.</p>
+                    </div> 
+                </div>  
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p><strong>User: </strong>{{repository.owner.login}}.</p>
+                        <img class="card-img-bottom" src="{{repository.owner.avatar_url}}"/>
+                    </div>
+                    <div style="text-align: left;" class="col-sm-10">
+                        <p><strong>Name:  </strong>{{repository.name}}.</p>
+                        <p><strong>Description:  </strong> {{repository.description}}.</p>
+                        <a href="{{repository.html_url}}" target="_blank"><button type="button" class="btn btn-outline-secondary">Navigate to repo</button></a>
+                    </div>
+                </div>
+        </div>
     </div>
 </div>
