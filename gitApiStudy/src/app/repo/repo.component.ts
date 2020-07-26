@@ -30,7 +30,6 @@ export class RepoComponent implements OnInit {
         this.repository.repoName = params.get("repo");
         this.repository.language = params.get("linguagem");
         this.repository.repoUser= params.get("user");
-        console.log(this.repository);
      })
   });
   }

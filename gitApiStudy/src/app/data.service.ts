@@ -15,7 +15,6 @@ export class DataService {
   }
 
   getRepo(user, repo): any{
-    console.log(user,repo);
     return this.http.get("https://api.github.com/repos/" + user+'/'+repo);
   }
 
