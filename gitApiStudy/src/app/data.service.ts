@@ -17,7 +17,7 @@ export class DataService {
   getRepo(user, repo): any{
     return this.http.get("https://api.github.com/repos/" + user+'/'+repo);
   }
-
+  // Infelizmente não consegui fazer conectar utilizando o heroku, porém local ele funcion
   // saveRepos(): any{
   //   let headers = new Headers();
   //   headers.append('Content-Type', 'application/json');
