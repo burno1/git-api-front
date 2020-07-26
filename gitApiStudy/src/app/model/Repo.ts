@@ -1,3 +1,4 @@
+import { Owner } from './Owner';
  /* NEED TO PICK 
   GET /repos/:owner/:repo
   https://api.github.com/repos/owner/repo
@@ -10,6 +11,9 @@
 
 export class Repo{
     repoName: string;
+    name: string;
+    html_url: string;
+    owner: Owner;
     avatar_url: string;
     url: string;
     repoUser: string;
